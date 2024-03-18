@@ -49,7 +49,7 @@ const updateNote = async(req,res) => {
     try{
         const updatedNote = await notesModel.findByIdAndUpdate(id, {title,body});
         if(updatedNote){
-            res.status(200).send(updateNote);
+            res.status(200).send(updatedNote);
         }
     }catch(error){
         res.status(500).send(error);

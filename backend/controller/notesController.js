@@ -1,6 +1,8 @@
 const notesModel = require('../models/notesModel')
 const mongoose = require('mongoose')
 
+//This has all the functions related to CRUD operation
+
 //This will create and save new note
 const createNote = async(req,res) => {
     const {title,body} = req.body;

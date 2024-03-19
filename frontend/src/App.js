@@ -1,11 +1,15 @@
+import Navbar from "./Components/Navbar";
+import AllNotes from "./Pages/AllNotes";
+import CreateNote from "./Pages/CreateNote";
+import Home from "./Pages/Home";
 
 
 function App() {
   return (
     <>
-     <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <Navbar/>
+    <CreateNote/>
+    {/* <Home/> */}
     </>
   );
 }

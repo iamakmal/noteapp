@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from "react-router-dom";
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
@@ -12,11 +13,13 @@ const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
       <div className="flex lg:flex-1">
         <a href="#" className="-m-1.5 p-1.5">
           <span className="sr-only">Note Mate</span>
+          <Link to="/">
           <img
             className="h-8 w-auto"
             src="/notelogo.png"
             alt="note mate logo"
           />
+          </Link>
         </a>
       </div>
       <div className="flex lg:hidden">

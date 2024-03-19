@@ -22,15 +22,13 @@ export default function AllNotes() {
         retrieveNotes()
     }, [])
 
-    const filteredNotes = notes.filter((notes) => {
-        if(notes){
-            const title = notes.title.toLowerCase()
-            const note = notes.note.toLowerCase()
-            const keyword = Keyword.toLowerCase()
+    const filteredNotes = notes.filter((data) => {
+        const title = data.title?.toLowerCase() || ''; 
+        const filterNote = data.note?.toLowerCase() || '';
+        const keyword = Keyword.toLowerCase();
     
-            return title.includes(keyword) || note.includes(keyword) 
-        }
-    })
+        return title.includes(keyword) || filterNote.includes(keyword);
+    });
 
     const renderNotes = filteredNotes.map((note) => {
         return (
@@ -49,7 +47,7 @@ export default function AllNotes() {
                         Create New Note
                     </Link>
                 </div>
-                <div className="flex items-center justify-center max-w-4xl ml-80">
+                <div className="flex items-center justify-center max-w-4xl ml-80 mb-10">
                     <input type="text" name="searchNote" id="searchNote" value={Keyword} onChange={(e) => setKeyword(e.target.value)} class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Enter Search Keyword" required />
                 </div>
                 <div class="overflow-x-auto sm:mx-0.5 lg:mx-0.5">

@@ -10,7 +10,7 @@ export default function NoteCard(props) {
 
     //This will delete a note by calling the endpoint in the backend
     const deleteNote = () => {
-        axios.delete(`http://localhost:5000/api/notes/deleteNote/${id}`).then(() => {
+        axios.delete(`${process.env.REACT_APP_API}/deleteNote/${id}`).then(() => {
         //After deleting it will reload the page
         window.location.reload()
         })

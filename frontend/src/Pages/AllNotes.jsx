@@ -10,7 +10,7 @@ export default function AllNotes() {
 
     //Retrieve all the Notes
     const retrieveNotes = () => {
-        axios.get("http://localhost:5000/api/notes/getNotes").then((res) => {
+        axios.get(`${process.env.REACT_APP_API}/getNotes`).then((res) => {
             console.log(res.data)
             setNotes(res.data)
         })

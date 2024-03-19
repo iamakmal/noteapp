@@ -11,7 +11,7 @@ const {id} = useParams()
 
 //This will get the data of note by its id and populate the input elements with those values
 useEffect(() => {
-    axios.get(`http://localhost:5000/api/notes/getNote/${id}`).then((res) =>{
+    axios.get(`${process.env.REACT_APP_API}/getNote/${id}`).then((res) =>{
         console.log(res.data)
         setTitle(res.data.title)
         setBody(res.data.body)
@@ -28,7 +28,7 @@ const updateNote = (e) => {
         title,
         body
     }
-    axios.put(`http://localhost:5000/api/notes/updateNote/${id}`, data).then(() => {
+    axios.put(`${process.env.REACT_APP_API}/updateNote/${id}`, data).then(() => {
 
         navigate('/allNotes', { replace: true });
     })

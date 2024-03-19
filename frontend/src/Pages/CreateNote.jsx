@@ -14,7 +14,7 @@ export default function CreateNote() {
             title,
             body
         }
-        axios.post("http://localhost:5000/api/notes/createNote", data).then(() => {
+        axios.post(`${process.env.REACT_APP_API}/createNote`, data).then(() => {
             setTitle("")
             setBody("")
             //After adding note it will return back to All Notes Page

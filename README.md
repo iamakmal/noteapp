@@ -12,6 +12,8 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 This will run the backend (Node Server)
 It will be running on [http://localhost:3000](http://localhost:5000) 
 
+Vercel Deployement Link: https://noteapp-mocha.vercel.app/
+
 ## Screenshots
 ![image](https://github.com/iamakmal/noteapp/assets/95517227/d8d323c7-31d0-4b8c-9f1d-c887daacba28)
 ![image](https://github.com/iamakmal/noteapp/assets/95517227/c4d65bf8-d2a5-4d37-88cd-2bbc54ee9123)

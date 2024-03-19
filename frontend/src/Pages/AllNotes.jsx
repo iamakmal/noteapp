@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios"
 import NoteCard from '../Components/NoteCard';
 
+//This will show all the notes in the database
 export default function AllNotes() {
     const [notes, setNotes] = useState([])
     const [Keyword, setKeyword] = useState('')
@@ -22,6 +23,7 @@ export default function AllNotes() {
         retrieveNotes()
     }, [])
 
+    //This will filter the notes by the keywords in the search bar
     const filteredNotes = notes.filter((data) => {
         const title = data.title?.toLowerCase() || ''; 
         const filterNote = data.note?.toLowerCase() || '';
@@ -30,6 +32,7 @@ export default function AllNotes() {
         return title.includes(keyword) || filterNote.includes(keyword);
     });
 
+    //This will render each notes by calling the note card component
     const renderNotes = filteredNotes.map((note) => {
         return (
             <NoteCard notes={note} />

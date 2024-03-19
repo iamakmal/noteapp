@@ -7,6 +7,7 @@ export default function CreateNote() {
     const [body, setBody] = useState("")
     let navigate = useNavigate();
 
+    //This will add note to database by calling the backend api endpoint
     const addNote = (e) => {
         e.preventDefault()
         const data = {
@@ -16,6 +17,7 @@ export default function CreateNote() {
         axios.post("http://localhost:5000/api/notes/createNote", data).then(() => {
             setTitle("")
             setBody("")
+            //After adding note it will return back to All Notes Page
             navigate('/allNotes', { replace: true });
         })
             .catch((error) => {

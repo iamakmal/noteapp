@@ -1,5 +1,5 @@
 import React from 'react'
-import { useNavigate, Link  } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import axios from "axios"
 
 export default function NoteCard(props) {
@@ -7,11 +7,11 @@ export default function NoteCard(props) {
     const newDate = new Date(updatedAt)
     const date = newDate.toLocaleDateString() + " at " + newDate.toLocaleTimeString()
     const id = _id.toString()
-    let navigate = useNavigate();
 
+    //This will delete a note by calling the endpoint in the backend
     const deleteNote = () => {
         axios.delete(`http://localhost:5000/api/notes/deleteNote/${id}`).then(() => {
-        //navigate('/allNotes', { replace: true });
+        //After deleting it will reload the page
         window.location.reload()
         })
         .catch((error) => {

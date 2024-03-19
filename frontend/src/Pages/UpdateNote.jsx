@@ -2,12 +2,14 @@ import React,{useState, useEffect} from 'react'
 import { useNavigate, Link, useParams  } from 'react-router-dom';
 import axios from "axios"
 
+//This page will update a note
 export default function UpdateNote() {
 const [title, setTitle] = useState("")
 const [body, setBody] = useState("")
 let navigate = useNavigate();
 const {id} = useParams()
 
+//This will get the data of note by its id and populate the input elements with those values
 useEffect(() => {
     axios.get(`http://localhost:5000/api/notes/getNote/${id}`).then((res) =>{
         console.log(res.data)
@@ -19,6 +21,7 @@ useEffect(() => {
     })
 },[])
 
+//This will update the noe by calling the api endpoint with the updated data
 const updateNote = (e) => {
     e.preventDefault()
     const data = {

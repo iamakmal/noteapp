@@ -9,7 +9,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <>
-     <Router>
+    <Router>
     <Navbar/>
     <Routes>
       <Route index element={<Home/>}/>

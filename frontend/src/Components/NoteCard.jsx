@@ -11,7 +11,8 @@ export default function NoteCard(props) {
 
     const deleteNote = () => {
         axios.delete(`http://localhost:5000/api/notes/deleteNote/${id}`).then(() => {
-        navigate('/allNotes', { replace: true });
+        //navigate('/allNotes', { replace: true });
+        window.location.reload()
         })
         .catch((error) => {
             console.log(error.response.data)

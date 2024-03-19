@@ -42,7 +42,7 @@ return (
         <div class="flex items-center justify-center h-screen">
         <div class="w-full max-w-4xl p-4 bg-gray-100 border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
             <form class="space-y-6" onSubmit={updateNote}>
-                <h5 class="text-2xl font-medium text-gray-900 dark:text-white">Create New Note</h5>
+                <h5 class="text-2xl font-medium text-gray-900 dark:text-white">Update Note</h5>
                     <div>
                         <label for="title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title</label>
                         <input type="text" name="title" id="title" value={title} onChange={(e) => setTitle(e.target.value)} class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Enter Title" required />
